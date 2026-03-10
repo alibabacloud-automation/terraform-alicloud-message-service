@@ -106,12 +106,6 @@ resource "alicloud_message_service_event_rule" "event_rules" {
     }
   }
 
-  lifecycle {
-    ignore_changes = [
-      match_rules
-    ]
-  }
-
   depends_on = [
     alicloud_message_service_service.service,
     alicloud_message_service_topic.topics
