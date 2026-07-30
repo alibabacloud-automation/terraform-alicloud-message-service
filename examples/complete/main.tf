@@ -80,10 +80,8 @@ module "message_service" {
       match_rules = [
         [
           {
-            name        = var.topic_name
+            name        = format("acs:oss:%s:%s:%s", var.region, data.alicloud_account.current.id, var.topic_name)
             match_state = "true"
-            prefix      = "logs/"
-            suffix      = ".log"
           }
         ]
       ]
